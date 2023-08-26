@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-brs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <head>
+      <nav class="menu">
+        <ul>
+          <li><a class="nav sobre active" id="sobre">Sobre</a></li>
+          <li><a class="nav" id="formacao">Formação</a></li>
+          <li><a class="nav" id="portfolio">Portfólio</a></li>
+          <li><a class="nav" id="contato">Contato</a></li>
+        </ul>
+      </nav>
+    </head>
+    <main>
+      <section class="sobre">
+        <h1>Olá!</h1>
+        <h2>Prazer! Me chamo Ana Paula Glislere</h2>
+        <div class="container">
+          <div>
+            <p>Tenho 29 anos :)</p>
+            <img
+              class="img"
+              src="assets/idade.jpg"
+              alt="Velas de aniversário"
+            />
+          </div>
+          <div>
+            <p>Alguna dos Hobbies são</p>
+            <ul>
+              <li>Ficar em contato com a natureza, fazer trilhas e pesca</li>
+              <li>Ir ao cinema</li>
+              <li>Assistir animes</li>
+            </ul>
+            <img class="img" src="assets/anime.jpeg" alt="anime one piece" />
+          </div>
+          <div>
+            <ul>
+              <li>
+                Atualmente atuo como desenvolvedora de Software, oriento 3
+                estagiárias e fico contente de aumentar a representatividade das
+                mulheres na TI.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="formacao">
+        <h1>Formação</h1>
+
+        <div class="container">
+          <div>
+            <p>
+              Sou formada em Química e tenho mestrado também em Química pela
+              UFPR.
+            </p>
+          </div>
+          <div>
+            <p>
+              Fiz transição de carreira e atualmente estou no último período de
+              Análise e desenvolvimento de sistemas pela Uninter.
+            </p>
+          </div>
+          <div>
+            <img
+              src="assets/formacao.jpeg"
+              alt="Imagem de chapeu de formatura"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio">
+        <h1>Portfólio</h1>
+        <div class="container">
+          <div>
+            Alguns dos meus projetos podem ser encontrados no meu
+            <a href="https://github.com/AnaGli?tab=repositories">Github</a>
+          </div>
+          <div>
+            <img src="assets/GitHub.jpg" alt="Logo GitHub" />
+          </div>
+        </div>
+      </section>
+
+      <section class="contato">
+        <h1>Contato</h1>
+        <div class="container">
+          <div>
+            <a href="https://www.linkedin.com/in/anapaulaglislere/">Linkedin</a>
+            <p>E-mail: glislere.ana@gmail.com</p>
+          </div>
+          <div>
+            <form action="/enviar" method="post">
+              <label for="nome">Nome:</label><br />
+              <input type="text" id="nome" name="nome" required />
+
+              <label for="email">Email:</label><br />
+              <input type="email" id="email" name="email" required />
+
+              <label for="telefone">Telefone:</label><br />
+              <input type="tel" id="telefone" name="telefone" />
+
+              <label for="mensagem">Mensagem:</label><br />
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="4"
+                cols="50"
+                required
+              ></textarea>
+
+              <button type="submit" value="Enviar">Enviar</button>
+            </form>
+          </div>
+          <div><img src="assets/contato.jpeg" alt="Icone de contato" /></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // funcao para determinar qual o menu ativo, faz um looping nos links, remove a classe ativa e adiciona na qua foi clicada
+      function setActive() {
+        var linksMenu = document.getElementsByClassName("nav");
+        for (var i = 0; i < linksMenu.length; i++) {
+          linksMenu[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            setDisplay(this.getAttribute("id"));
+          });
+        }
+      }
+
+      // funcao para exibir o conteudo da pagina de acordo com o menu clicado, recebe o item clicado, remove o display anterior e adicona ao que foi recebido
+      function setDisplay(activeSection) {
+        const section = document.getElementsByTagName("section");
+        for (var i = 0; i < section.length; i++) {
+          var currentClass = section[i].getAttribute("class");
+          section[i].style.display = "none";
+          if (currentClass === activeSection) {
+            section[i].style.display = "block";
+          }
+        }
+      }
+      setActive();
+    </script>
+  </body>
+</html>

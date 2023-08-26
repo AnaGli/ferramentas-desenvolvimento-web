@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+}
+
+.menu li {
+  border: solid #f6e105 3px;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 20px;
+}
+
+.menu li a:hover {
+  background-color: #fbe782;
+  transition: background-color 0.3s ease;
+}
+
+section {
+  margin: 10px;
+  padding: 10px;
+  border: solid #f6e105 2px;
+}
+
+.sobre {
+  display: block;
+}
+
+.formacao,
+.portfolio,
+.contato {
+  display: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+img {
+  width: 30vw;
+}
+
+p {
+  padding: 0 1rem;
+}
+
+.active {
+  background-color: #f6c600;
+}
+
+/* CSS do formulario da pagina de contato */
+
+form {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+input,
+textarea, button {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f6c600;
+  border-radius: 3px;
+}
+
+
+
